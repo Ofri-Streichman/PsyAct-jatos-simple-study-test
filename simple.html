@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Questionnaire</title>
+    <link rel="stylesheet" href="questionnaire_styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="jatos.js"></script>
+    
+    <script src="https://static.psyact.org/jatos_append/jquery-ui.min.js"></script>
+    <script src="https://static.psyact.org/jatos_append/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>Welcome!</h1>
+  <p>Please enter a message below:</p>
+  
+  <input type="text" id="userInput" placeholder="Type your message...">
+  <button onclick="sendMessage()">Send</button>
+
+  <script>
+    function sendMessage() {
+      // Get the user's input
+      var userInput = document.getElementById("userInput").value;
+
+      // Log the user's input to the console
+      console.log(userInput);
+
+      //jatos endstudy
+      jatos.endStudy(data);
+    }
+
+    // Pressing the Enter key triggers the button click
+    document.getElementById("userInput").addEventListener("keyup", function(event) {
+      if (event.key === "Enter") {
+        sendMessage();
+      }
+    });
+  </script>
+
+    <!-- <script src="questionnaire_script.js"></script> -->
+  </body>
+</html>
